@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="left-menu">
+    <div class="menu-body">
+        <div class="multi-menu">
+            {% for k,v in menu_order_dict.items %}
+                <div class="item">
+                    <div class="title"><i class="fa {{ v.icon }}"></i> {{ v.name }}</div>
+                    <div class="body {{ v.class }}">
+                        {% for child in v.children %}
+                            <a href="{{ child.url }}" class="{{ child.class }}">{{ child.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

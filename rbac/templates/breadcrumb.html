@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for i in bread_crumb %}
+        {% if forloop.last %}
+            <li class="active">{{ i.title }}</li>
+        {% else %}
+            <li><a href={{i.url}}>{{ i.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
