@@ -14,8 +14,8 @@
 1. 用户表
 
    ```python
-   # 用户表
    class UserInfo(models.Model):
+       """ 用户表 """
        username = models.CharField(max_length=32)
        password = models.CharField(max_length=32)
        roles = models.ManyToManyField('Role')
@@ -26,8 +26,8 @@
 2. 角色表
 
    ```python
-   # 角色表
    class Role(models.Model):
+       """ 角色表 """
        name = models.CharField(max_length=16)
        permissions = models.ManyToManyField('Permission')
    
@@ -38,8 +38,8 @@
 3. 权限
 
    ```python
-   # 权限
    class Permission(models.Model):
+       """ 权限表 """
        title = models.CharField(max_length=32)
        url = models.CharField(max_length=32)
        menus = models.ForeignKey('Menu', null=True, blank=True)
@@ -53,8 +53,8 @@
 4. 一级菜单表
 
    ```python
-   # 一级菜单表
    class Menu(models.Model):
+       """ 一级菜单表 """
        name = models.CharField(max_length=32)
        weight = models.IntegerField(default=100)
        icon = models.CharField(max_length=32, null=True, blank=True)
